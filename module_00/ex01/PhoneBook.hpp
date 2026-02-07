@@ -10,14 +10,15 @@ class PhoneBook
         Contact contacts[8];
         int count;
         int i;
+        
+        void displayContactsTable();
+        void displayContact(int index);
+        void askContactIndexAndDisplay();
 
     public:
         PhoneBook();
         void addContact();
         void searchContact();
-        void displayContactsTable();
-        void displayContact(int index);
-        void askContactIndexAndDisplay();
 };
 
 #endif
