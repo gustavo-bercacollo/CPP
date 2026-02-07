@@ -1,5 +1,8 @@
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include "Contact.hpp"
-#include "iostream"
+#include "Includes.hpp"
 
 class PhoneBook
 {
@@ -12,4 +15,7 @@ class PhoneBook
         PhoneBook();
         void addContact();
         void searchContact();
+        void displayContact(int index);
 };
+
+#endif

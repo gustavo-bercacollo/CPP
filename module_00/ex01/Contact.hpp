@@ -1,4 +1,7 @@
-#include <string>
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
+#include "Includes.hpp"
 
 class Contact
 {
@@ -22,3 +25,5 @@ class Contact
     std::string getPhoneNumber() const;
     std::string getDarkestSecret() const;
 };
+
+#endif
