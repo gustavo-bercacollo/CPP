@@ -58,17 +58,34 @@ void PhoneBook::addContact()
         contacts[i++] = newContact;
         if (i == 8) i = 0;
     }
-    std::cout << GREEN << "Contact saved!" << RESET << std::endl;
+    std::cout << GREEN << "Contact saved! ✅" << RESET << std::endl;
 }
 
-void PhoneBook::searchContact()
+void PhoneBook::askContactIndexAndDisplay()
 {
-
-    if (count == 0)
+    while (true)
     {
-        std::cout << RED << "No contacts available." << RESET << std::endl;
-        return;
+        std::cout << "--> To more details, input the contact's index:\n";
+        std::cout << "--> To return to menu type -1:\n" << std::endl;
+
+        std::string input;
+        std::getline(std::cin, input);
+
+        int index = std::atoi(input.c_str());
+
+        if (index == -1)
+            return;
+        if (index < 0 || index > count)
+        {
+            std::cout << RED << "Invalid index." << RESET << std::endl;
+            continue;
+        }
+        displayContact(index);
     }
+}
+
+void PhoneBook::displayContactsTable()
+{
     std::cout << "---------------------------------------------" << std::endl;
     std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
     std::cout << "---------------------------------------------" << std::endl;
@@ -82,25 +99,16 @@ void PhoneBook::searchContact()
                   << std::endl;
     }
     std::cout << "---------------------------------------------\n" << std::endl;
-    
-    while (true)
+}
+
+void PhoneBook::searchContact()
+{
+
+    if (count == 0)
     {
-        std::cout << "--> To more details, input the contact's index:\n";
-        std::cout << "--> To return to menu type -1:\n" << std::endl;
-
-        std::string input;
-        std::getline(std::cin, input);
-
-        int index = std::atoi(input.c_str());
-
-        if (index == -1)
-            return;
-
-        if (index < 0 || index > count)
-        {
-            std::cout << RED << "Invalid index." << RESET << std::endl;
-            continue;
-        }
-        displayContact(index);
+        std::cout << RED << "No contacts available." << RESET << std::endl;
+        return;
     }
+    displayContactsTable();
+    askContactIndexAndDisplay();
 }
