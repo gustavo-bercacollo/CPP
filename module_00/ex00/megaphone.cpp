@@ -1,6 +1,4 @@
-#include <iostream>
-#include <string>
-#include <cctype>
+#include "Includes.hpp"
 
 void megafone(std::string str)
 {
