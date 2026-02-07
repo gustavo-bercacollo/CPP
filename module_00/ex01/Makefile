@@ -3,9 +3,9 @@ NAME = phonebook
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = phoneBook.cpp \
-	  contact.cpp \
-	  main.cpp
+SRC = PhoneBook.cpp \
+	  Contact.cpp \
+	  Main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
