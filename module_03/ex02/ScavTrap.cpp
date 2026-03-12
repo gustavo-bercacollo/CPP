@@ -33,6 +33,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
         energy_points = other.energy_points;
         attack_damage = other.attack_damage;
     }
+    std::cout << "Copy assignment operator called" << std::endl;
     return *this;
 }
 
