@@ -3,7 +3,6 @@
 
 int main()
 {
-    // test 1: integer array
     Array<int> numbers(5);
     numbers[0] = 10;
     numbers[1] = 20;
